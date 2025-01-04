@@ -3,7 +3,7 @@
     /// <summary>
     /// Modela los posibles estados en que puede estar un módulo
     /// </summary>
-    public enum ModuleStatus
+    public enum ModuloStatus
     {
         //TODO: Definir Posibles estatus de módulo
     }

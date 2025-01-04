@@ -1,36 +1,41 @@
-﻿using IoT_Module_Centralization.Domain.Enums;
-using IoT_Module_Centralization.Domain.ValueObjects;
+﻿using IoT_Module_Centralization.Domain.Common;
+using IoT_Module_Centralization.Domain.Enums;
+using IoT_Module_Centralization.Domain.ValueObject;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IoT_Module_Centralization.Domain.Entities
 {
-    public class Module : BaseEntity
+    public class Modulo : BaseEntity
     {
         #region Propiedades
 
         /// <summary>
         /// Nombre del Módulo
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
 
         /// <summary>
         /// Dirección IP del Módulo
         /// </summary>
-        public IpAddress IpAddress { get; private set; }
+        [NotMapped]
+        public IpAddress IpAddress { get; protected set; }
 
         /// <summary>
         /// Puerto del Módulo
         /// </summary>
-        public Port Port { get; private set; }
+        [NotMapped]
+        public Port Port { get; protected set; }
 
         /// <summary>
         /// Estado del Módulo
         /// </summary>
-        public ModuleStatus Status { get; private set; }
+        public ModuloStatus Status { get; protected set; }
 
         /// <summary>
         /// Lista de Unidades del Módulo
         /// </summary>
-        public ICollection<Unit> Units { get; private set; } = [];
+        [NotMapped]
+        public ICollection<Unit> Units { get; protected set; } = new List<Unit>();
         #endregion
 
         #region Constructores
@@ -38,12 +43,9 @@ namespace IoT_Module_Centralization.Domain.Entities
         /// <summary>
         /// Requerido por EntityFrameworkCore para migraciones.
         /// </summary>
-#pragma warning disable CS8618
-        // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
-        protected Module() { }
-#pragma warning restore CS8618
+        protected Modulo() { }
 
-        public Module(string name, IpAddress ipAddress, Port port, ModuleStatus status)
+        public Modulo(string name, IpAddress ipAddress, Port port, ModuloStatus status)
         {
             Name = name;
             IpAddress = ipAddress;

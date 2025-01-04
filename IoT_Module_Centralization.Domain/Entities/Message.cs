@@ -1,4 +1,5 @@
-﻿using IoT_Module_Centralization.Domain.Enums;
+﻿using IoT_Module_Centralization.Domain.Common;
+using IoT_Module_Centralization.Domain.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IoT_Module_Centralization.Domain.Entities
@@ -10,17 +11,17 @@ namespace IoT_Module_Centralization.Domain.Entities
         /// <summary>
         /// Texto del mensaje
         /// </summary>
-        public string Content { get; private set; } = string.Empty;
+        public string Content { get; protected set; } = string.Empty;
 
         /// <summary>
         /// Fecha y hora en que se generó
         /// </summary>
-        public DateTime Timestamp { get; private set; }
+        public DateTime Timestamp { get; protected set; }
 
         /// <summary>
         /// Prioridad (baja, media, alta)
         /// </summary>
-        public MessagePriority Priority { get; private set; }
+        public MessagePriority Priority { get; protected set; }
 
 
         // Relación: Un mensaje es generado por un módulo
@@ -29,13 +30,13 @@ namespace IoT_Module_Centralization.Domain.Entities
         /// Clave foránea del módulo
         /// </summary>
         [NotMapped]
-        public Guid ModuleId { get; private set; }
+        public Guid ModuloId { get; protected set; }
 
         /// <summary>
         /// Propiedad de navegación al módulo
         /// </summary>
         [NotMapped]
-        public Module Module { get; private set; }
+        public Modulo Modulo { get; protected set; }
         #endregion
 
         #region Constructores
@@ -43,17 +44,15 @@ namespace IoT_Module_Centralization.Domain.Entities
         /// <summary>
         /// Requerido por EntityFrameworkCore para migraciones.
         /// </summary>
-#pragma warning disable CS8618
-        // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         protected Message() { }
-#pragma warning restore CS8618
 
-        public Message(string content, DateTime timestamp, Module module, MessagePriority priority = MessagePriority.Low)
+
+        public Message(string content, DateTime timestamp, Modulo Modulo, MessagePriority priority = MessagePriority.Low)
         {
             Content = content;
             Timestamp = timestamp;
             Priority = priority;
-            Module = module;
+            Modulo = Modulo;
         }
         #endregion
     }

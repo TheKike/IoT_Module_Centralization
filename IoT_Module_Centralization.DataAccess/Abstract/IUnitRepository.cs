@@ -1,13 +1,14 @@
-﻿using IoT_Module_Centralization.Domain.Entities;
+﻿using Condominio.DataAccess.Abstract;
+using IoT_Module_Centralization.Domain.Entities;
 
-namespace IoT_Module_Centralization.Domain.Abstract
+namespace IoT_Module_Centralization.DataAccess.Abstract
 {
-    public interface IUnitRepository
+    public interface IUnitRepository : IRepository
     {
-        Unit GetById(Guid id);
-        IEnumerable<Unit> GetAll();
-        void Add(Unit unit);
-        void Update(Unit unit);
-        void Delete(Guid id);
+        public Unit GetById(Guid id);
+        public IEnumerable<Unit> GetAll();
+        public void Add(Unit unit);
+        public void Update(Unit unit);
+        public void Delete(Guid id);
     }
 }

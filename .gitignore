@@ -6,3 +6,15 @@
 /IoT_Module_Centralization.DataAccess/obj/Debug/net8.0
 /IoT_Module_Centralization.DataAccess/obj
 /IoT_Module_Centralization.Domain/obj
+/.vs
+/CarDealer.DataAccess/.vs
+/IoTModuleCentralization.AppDBPrueba/bin/Debug/net8.0
+/IoTModuleCentralization.AppDBPrueba/obj
+/IoTModuleCentralization.GrpcProtos/bin/Debug/net8.0
+/IoTModuleCentralization.GrpcProtos/obj
+/IoTModuleCentralization.GrpcService/bin/Debug/net8.0
+/IoTModuleCentralization.GrpcService/obj
+/IoT_Module_Centralization.DataAccess/bin/Debug/net8.0
+/IoT_Module_Centralization.Domain/bin/Debug/net8.0
+/TestIoTModuleCentralization.DataAccess.Test/bin/Debug/net8.0
+/TestIoTModuleCentralization.DataAccess.Test/obj

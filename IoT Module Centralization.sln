@@ -5,7 +5,27 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT_Module_Centralization.Domain", "IoT_Module_Centralization.Domain\IoT_Module_Centralization.Domain.csproj", "{82067285-A812-41BB-A6DB-A781B1A1A3F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.DataAccess", "IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj", "{8B7E3E31-F82E-49CA-97E6-FE7F6B563219}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT_Module_Centralization.DataAccess", "IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj", "{8B7E3E31-F82E-49CA-97E6-FE7F6B563219}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82067285-A812-41BB-A6DB-A781B1A1A3F7} = {82067285-A812-41BB-A6DB-A781B1A1A3F7}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTModuleCentralization.DataAccess.Test", "TestIoTModuleCentralization.DataAccess.Test\IoTModuleCentralization.DataAccess.Test.csproj", "{9999D871-CF30-4762-9318-D9039016051D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82067285-A812-41BB-A6DB-A781B1A1A3F7} = {82067285-A812-41BB-A6DB-A781B1A1A3F7}
+		{8B7E3E31-F82E-49CA-97E6-FE7F6B563219} = {8B7E3E31-F82E-49CA-97E6-FE7F6B563219}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTModuleCentralization.GrpcProtos", "IoTModuleCentralization.GrpcProtos\IoTModuleCentralization.GrpcProtos.csproj", "{A6B2DA60-E2C9-419D-93AE-57624EB9DD32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTModuleCentralization.GrpcService", "IoTModuleCentralization.GrpcService\IoTModuleCentralization.GrpcService.csproj", "{64961DDF-D70A-43F3-ADC5-FE47931785E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82067285-A812-41BB-A6DB-A781B1A1A3F7} = {82067285-A812-41BB-A6DB-A781B1A1A3F7}
+		{8B7E3E31-F82E-49CA-97E6-FE7F6B563219} = {8B7E3E31-F82E-49CA-97E6-FE7F6B563219}
+		{A6B2DA60-E2C9-419D-93AE-57624EB9DD32} = {A6B2DA60-E2C9-419D-93AE-57624EB9DD32}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTModuleCentralization.AppDBPrueba", "IoTModuleCentralization.AppDBPrueba\IoTModuleCentralization.AppDBPrueba.csproj", "{7191C80F-32D5-4C9B-87B6-881CE4DE9F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +41,22 @@ Global
 		{8B7E3E31-F82E-49CA-97E6-FE7F6B563219}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B7E3E31-F82E-49CA-97E6-FE7F6B563219}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B7E3E31-F82E-49CA-97E6-FE7F6B563219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9999D871-CF30-4762-9318-D9039016051D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9999D871-CF30-4762-9318-D9039016051D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9999D871-CF30-4762-9318-D9039016051D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9999D871-CF30-4762-9318-D9039016051D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B2DA60-E2C9-419D-93AE-57624EB9DD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B2DA60-E2C9-419D-93AE-57624EB9DD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B2DA60-E2C9-419D-93AE-57624EB9DD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B2DA60-E2C9-419D-93AE-57624EB9DD32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64961DDF-D70A-43F3-ADC5-FE47931785E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64961DDF-D70A-43F3-ADC5-FE47931785E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64961DDF-D70A-43F3-ADC5-FE47931785E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64961DDF-D70A-43F3-ADC5-FE47931785E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7191C80F-32D5-4C9B-87B6-881CE4DE9F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7191C80F-32D5-4C9B-87B6-881CE4DE9F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7191C80F-32D5-4C9B-87B6-881CE4DE9F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7191C80F-32D5-4C9B-87B6-881CE4DE9F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,19 +1,27 @@
 ﻿using IoT_Module_Centralization.Domain.Common;
-using IoT_Module_Centralization.Domain.ValueObjects;
+using IoT_Module_Centralization.Domain.ValueObject;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IoT_Module_Centralization.Domain.Entities
 {
     public class Unit : BaseEntity
     {
         #region Propiedades
-        
-        ///
-        public CodigoUnidad Code { get; private set; }
-        public string Name { get; private set; }
-        public string Area { get; private set; }
 
-        public Guid ModuleId { get; private set; }
-        public Module Module { get; private set; }
+        [NotMapped]
+        public CodigoUnidad Code { get; private set; }
+        public string Name { get; private set; } = string.Empty;
+        public string Area { get; private set; } = string.Empty;
+
+        /// <summary>
+        /// Identificador del módulo al que hace referencia
+        /// </summary>
+        public Guid ModuloId { get; private set; }
+        /// <summary>
+        /// Módulo al que hace referencia
+        /// </summary>
+        [NotMapped]
+        public Modulo Modulo { get; private set; }
         #endregion
 
         #region Constructores
@@ -21,19 +29,15 @@ namespace IoT_Module_Centralization.Domain.Entities
         /// <summary>
         /// Requerido por EntityFrameworkCore para migraciones.
         /// </summary>
-#pragma warning disable CS8618
-        // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declararlo como que admite un valor NULL.
         protected Unit() { }
-#pragma warning restore 
-
-
-        public Unit(CodigoUnidad code, string name, string area, Module module)
+ 
+        public Unit(CodigoUnidad code, string name, string area, Modulo Modulo)
         {
             Code = code;
             Name = name;
             Area = area;
-            Module = module;
-            ModuleId = module.Id;
+            Modulo = Modulo;
+            ModuloId = Modulo.Id;
         }
         #endregion
     }

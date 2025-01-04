@@ -1,8 +1,16 @@
-﻿namespace IoT_Module_Centralization.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace IoT_Module_Centralization.Domain.Common
 {
     public abstract class BaseEntity
     {
-        public Guid Id { get; protected set; } = Guid.NewGuid(); // Identificador único
+        /// <summary>
+        /// Identificador único
+        /// </summary>
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; protected set; } = Guid.NewGuid();
 
         // Método para comparar entidades por su ID
         public override bool Equals(object? obj)

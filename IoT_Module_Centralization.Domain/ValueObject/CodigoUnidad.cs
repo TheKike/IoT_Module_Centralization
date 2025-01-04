@@ -1,8 +1,8 @@
-﻿namespace IoT_Module_Centralization.Domain.ValueObjects
+﻿namespace IoT_Module_Centralization.Domain.ValueObject
 {
     public class CodigoUnidad
     {
-        public string Value { get; }
+        public string Value { get; protected set; }
 
         // Constructor que valida el código de unidad
         public CodigoUnidad(string value)

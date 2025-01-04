@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace IoT_Module_Centralization.Domain.ValueObjects
+namespace IoT_Module_Centralization.Domain.ValueObject
 {
     public class IpAddress
     {
