@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/IoT Module Centralization/FileContentIndex
+/IoT_Module_Centralization.DataAccess/obj/Debug/net8.0
+/IoT_Module_Centralization.DataAccess/obj
+/IoT_Module_Centralization.Domain/obj
